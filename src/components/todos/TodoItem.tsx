@@ -1,6 +1,7 @@
 import { SetStateAction, useState } from "react";
 import { EditOutlined, CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
+import StyledButton from "../buttons/StyledButton";
 
 interface ITodoItem {
   todo: string;
@@ -110,12 +111,12 @@ export default function TodoItem({
                 value={updateValue}
                 suffix={
                   <>
-                    <button
+                    <StyledButton
                       type="submit"
                       style={{ border: "none", backgroundColor: "transparent" }}
                     >
                       <CheckOutlined />
-                    </button>
+                    </StyledButton>
                     <CloseOutlined onClick={() => setButtonValid(false)} />
                   </>
                 }

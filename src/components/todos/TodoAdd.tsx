@@ -1,5 +1,6 @@
 import { SetStateAction, useState } from "react";
 import { Input } from "antd";
+import Button from "../buttons/StyledButton";
 
 interface ITodoAdd {
   onSetInputValue: React.Dispatch<SetStateAction<string>>;
@@ -46,19 +47,20 @@ export default function TodoAdd({
         value={onInputValue || ""}
         aria-aria-label="할일 목록 추가"
       />
-      <button
+      <Button
         style={{
           height: "40px",
           width: "80px",
           border: "none",
           marginLeft: "5px",
           background: "white",
+          cursor: "pointer",
         }}
         type="submit"
         aria-label="추가 버튼"
       >
         추가
-      </button>
+      </Button>
     </form>
   );
 }
