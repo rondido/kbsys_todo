@@ -1,23 +1,10 @@
-import { Input } from "antd";
 import { useState } from "react";
 import TodoItem from "../components/todos/TodoItem";
+import TodoAdd from "../components/todos/TodoAdd";
 
 export default function TodosPage() {
-  const [inputList, setInputList] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
-
-  const handleTodoSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (inputValue === "") {
-      return;
-    }
-    setInputList([...inputList, inputValue]);
-    setInputValue("");
-  };
-
-  const handleTodoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
+  const [inputList, setInputList] = useState<string[]>([]);
 
   return (
     <div
@@ -48,37 +35,12 @@ export default function TodosPage() {
         </header>
         <main>
           <section>
-            <form
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                marginBottom: "10px",
-              }}
-              onSubmit={handleTodoSubmit}
-            >
-              <Input
-                placeholder="할일 목록을 추가해주세요."
-                style={{
-                  width: "100%",
-                  height: "40px",
-                }}
-                onChange={(e) => handleTodoChange(e)}
-                value={inputValue || ""}
-              />
-              <button
-                style={{
-                  height: "40px",
-                  width: "80px",
-                  border: "none",
-                  marginLeft: "5px",
-                  background: "white",
-                }}
-                type="submit"
-              >
-                추가
-              </button>
-            </form>
+            <TodoAdd
+              onSetInputValue={setInputValue}
+              onInputValue={inputValue}
+              onInputList={inputList}
+              setOnInputList={setInputList}
+            />
             {inputList.map((value, index) => (
               <TodoItem
                 todo={value}
