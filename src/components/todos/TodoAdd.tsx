@@ -1,20 +1,13 @@
-import { SetStateAction, useState } from "react";
 import { Input } from "antd";
 import Button from "../buttons/StyledButton";
-
-interface ITodoAdd {
-  onSetInputValue: React.Dispatch<SetStateAction<string>>;
-  onInputValue: string;
-  onInputList: string[];
-  setOnInputList: React.Dispatch<SetStateAction<string[]>>;
-}
+import { TodoAddType } from "../../types/TodoaddType";
 
 export default function TodoAdd({
   onSetInputValue,
   onInputValue,
   setOnInputList,
   onInputList,
-}: ITodoAdd) {
+}: TodoAddType) {
   const handleTodoSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (onInputValue === "") {
