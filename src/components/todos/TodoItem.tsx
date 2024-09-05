@@ -1,21 +1,15 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { EditOutlined, CheckOutlined, CloseOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
 import StyledButton from "../buttons/StyledButton";
-
-interface ITodoItem {
-  todo: string;
-  onIndex: number;
-  onInputList: string[];
-  setOnInputList: React.Dispatch<SetStateAction<string[]>>;
-}
+import { TodoItemType } from "../../types/TodoItemType";
 
 export default function TodoItem({
   todo,
   onIndex,
   onInputList,
   setOnInputList,
-}: ITodoItem) {
+}: TodoItemType) {
   const [buttonValid, setButtonValid] = useState<boolean>(false);
   const [updateValue, setUpdateValue] = useState(todo);
   const [isComplete, setIsComplete] = useState<boolean>(false);

@@ -1,12 +1,6 @@
-import { ReactNode } from "react";
+import { ButtonType } from "../../types/ButtonType";
 
-interface IButton {
-  children: ReactNode;
-  type: "submit" | "button" | "reset";
-  style: React.CSSProperties;
-}
-
-export default function StyledButton({ children, type, style }: IButton) {
+export default function StyledButton({ children, type, style }: ButtonType) {
   return (
     <button style={style} type={type}>
       {children}
