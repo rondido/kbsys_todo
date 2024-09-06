@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+## Todo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. 자신이 개발한 앱에 대한 설명
 
-Currently, two official plugins are available:
+Todo List 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+할일 목록 추가 및 수정 삭제
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 2. 소스 빌드 및 실행 방법 메뉴얼
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 실행 방법
+
+```
+npm install
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 3. 주력으로 사용한 컴포넌트에 대한 설명 및 사용 이유 기입
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+react vite를 사용
+cra에 보다 가볍고 빌드 및 핫 리로링 속도가 빠르다는 장점으로 인해 프로젝트 초기 설정 진행
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+TodoAdd는 할일 목록 추가 form
+
+TodoItem은 각 할일 목록 CRUD 기능
+
+상태 관리의 경우 useState를 사용하였고 다른 라이브러리 사용 가능 유무에 대한 이야기가 없어 props를 이용하여 상태관리 진행
+
+types는 각 컴포넌트별 type 정의
+
+buttons는 공통으로 사용되는 버튼에 대한 재사용 증대를 위해 만듬
+
