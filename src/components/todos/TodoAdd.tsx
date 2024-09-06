@@ -1,6 +1,6 @@
 import { Input } from "antd";
 import Button from "../buttons/StyledButton";
-import { TodoAddType } from "../../types/TodoaddType";
+import { TodoAddType } from "../../types/TodoAddType";
 
 export default function TodoAdd({
   onSetInputValue,
