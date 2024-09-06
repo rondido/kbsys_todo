@@ -15,6 +15,10 @@ Todo List
 ```
 npm install
 npm run dev
+
+
+로컬 주소
+http://localhost:5173/
 ```
 
 ## 3. 주력으로 사용한 컴포넌트에 대한 설명 및 사용 이유 기입
